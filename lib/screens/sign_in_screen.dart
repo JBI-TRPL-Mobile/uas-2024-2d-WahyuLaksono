@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'home_screen.dart';
+import 'sign_up_screen.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({Key? key}) : super(key: key);
@@ -43,7 +45,11 @@ class _SignInScreenState extends State<SignInScreen> {
 
       if (user != null) {
         Navigator.pushReplacement(
-          
+          context,
+          MaterialPageRoute(
+            builder: (context) => const HomeScreen(),
+          ),
+
         );
       } else {
         _showMessage('Invalid email or password.');
